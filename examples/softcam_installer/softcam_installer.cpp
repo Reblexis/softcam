@@ -6,7 +6,7 @@
 
 void Message(const std::string& message)
 {
-    MessageBoxA(NULL, message.c_str(), "Softcam Installer", MB_OK);
+    printf("%s\n", message.c_str());
 }
 
 
@@ -43,13 +43,9 @@ Func* GetProc(HMODULE hmod, const std::string& name)
 }
 
 
-int WINAPI WinMain(
-    HINSTANCE /*hInstance*/,
-    HINSTANCE /*hPrevInstance*/,
-    LPSTR /*lpszCmdLine*/,
-    int /*nCmdShow*/)
+int main(int argc, char* argv[])
 {
-    if (__argc != 3)
+    if (argc != 3)
     {
         Message(
             "Usage:\n"
@@ -58,7 +54,7 @@ int WINAPI WinMain(
         return 0;
     }
 
-    std::string cmd = __argv[1], path = __argv[2];
+    std::string cmd = argv[1], path = argv[2];
 
     if (cmd == "register")
     {
