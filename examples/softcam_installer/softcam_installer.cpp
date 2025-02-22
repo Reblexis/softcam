@@ -2,11 +2,12 @@
 #include <string>
 #include <cstring>
 #include <cstdio>
+#include <iostream>
 
 
 void Message(const std::string& message)
 {
-    printf("%s\n", message.c_str());
+    std::cout << message << std::endl;
 }
 
 
